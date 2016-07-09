@@ -56,7 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Items\Animals.cs" />
+    <Compile Include="Items\Furniture.cs" />
     <Compile Include="Items\Items.cs" />
+    <Compile Include="Mover.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

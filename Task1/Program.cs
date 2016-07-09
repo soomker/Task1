@@ -9,6 +9,8 @@ namespace Task1
 {
     class Program
     {
+      static  int maxX = 100;
+      static  int maxY = 100;
         static void Main(string[] args)
         {
             Item chair = new Item("chair", 20, 30);
@@ -17,7 +19,7 @@ namespace Task1
             Item pc = new Item("pc", 44, 0);
             Item couch = new Item("couch", 10, 16);
             Animal cat = new Animal("cat", 10, 16, "Meow!!");
-
+            
             List<Item> roomItems = new List<Item> { chair, table, tv, pc, couch, cat };
             int[] reservPos = new int[roomItems.Count];
 
@@ -27,30 +29,19 @@ namespace Task1
             }
 
             ConsoleKeyInfo key;
-            
-            doMove:
+
             Console.WriteLine();
             Console.WriteLine("To move Items press 'ENTER' or double press 'Esc' to exit");
-            if ((key = Console.ReadKey(true)).Key ==ConsoleKey.Enter)
+            while ((key = Console.ReadKey(true)).Key == ConsoleKey.Enter)
             {
-
-                MoveItems(roomItems, ref reservPos);
-                goto doMove;
+                Mover mover = new Mover();
+                mover.MoveItems(roomItems, ref reservPos, maxX, maxY);
             }
             if ((key = Console.ReadKey(true)).Key == ConsoleKey.Escape) return;
                 
             
            
         }
-        static void MoveItems(List<Item> roomItems, ref int [] reservedPos)
-        {
-                for (int i = 0; i < roomItems.Count; i++)
-                {
-                    roomItems[i].SaySomething();
-                    roomItems[i].Move(reservedPos);
-                    reservedPos[i] = roomItems[i].TotalPos;
-                }
-               
-        }
+       
     }
 }

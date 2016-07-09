@@ -43,17 +43,17 @@ namespace Task1.Items
 
       #region -------------- CLASS METHODS -------------------
 
-      public virtual void SaySomething(){}
+    
     
      
-      public void Move(int [] positions)
+      public void Move(int [] positions, int maxXPos, int maxYPos)
         {
             Console.Write(String.Format(itemName + " Current position is: X - {0} and Y - {1} ", itemPosX.ToString(), itemPosY.ToString()));
             Random rand = new Random();
             do
             {
-                itemPosX = rand.Next(0, 100);
-                itemPosY = rand.Next(0, 100);
+                itemPosX = rand.Next(0, maxXPos);
+                itemPosY = rand.Next(0, maxYPos);
                 totalPos = itemPosX + itemPosY;
             }
             while (positions.Contains(totalPos));
@@ -65,18 +65,5 @@ namespace Task1.Items
       #endregion -------------- CLASS METHODS -------------------
   }
 
- public class Animal : Item
-    {
-     string animalSpeech;  
-     public Animal(string name, int posX, int posY, string speech)
-            : base(name,posX,posY)
-        {
-            animalSpeech = speech;
-        }
 
-        public override void SaySomething()
-        {
-            Console.Write(animalSpeech);
-        }
-    }
 }
