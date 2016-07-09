@@ -20,7 +20,7 @@ namespace Task1.Items
        #region -------------- CLASS PROPERTIES -------------------
  
       /// <summary>
-     /// Sum of Positions (need for check reserved positions)
+     /// Sum of Positions (need  for check reserved positions)
     /// </summary>
       public int TotalPos
       {
