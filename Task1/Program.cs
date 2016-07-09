@@ -41,10 +41,8 @@ namespace Task1
                 
             }
             
-                
-            
-           
-        }
+                       
+         }
        
     }
 }
