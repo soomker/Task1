@@ -29,15 +29,18 @@ namespace Task1
             }
 
             ConsoleKeyInfo key;
-
+            
             Console.WriteLine();
             Console.WriteLine("To move Items press 'ENTER' or double press 'Esc' to exit");
             while ((key = Console.ReadKey(true)).Key == ConsoleKey.Enter)
             {
                 Mover mover = new Mover();
                 mover.MoveItems(roomItems, ref reservPos, maxX, maxY);
+                Console.WriteLine("To move Items press 'ENTER' or double press 'Esc' to exit");
+                if (key.Key == ConsoleKey.Escape) return;
+                
             }
-            if ((key = Console.ReadKey(true)).Key == ConsoleKey.Escape) return;
+            
                 
             
            
