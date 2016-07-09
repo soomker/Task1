@@ -13,11 +13,11 @@ namespace Task1
       static  int maxY = 100;
         static void Main(string[] args)
         {
-            Item chair = new Item("chair", 20, 30);
-            Item table = new Item("table", 40, 50);
-            Item tv = new Item("tv", 25, 55);
-            Item pc = new Item("pc", 44, 0);
-            Item couch = new Item("couch", 10, 16);
+            Furniture chair = new Furniture("chair", 20, 30);
+            Furniture table = new Furniture("table", 40, 50);
+            Furniture tv = new Furniture("tv", 25, 55);
+            Furniture pc = new Furniture("pc", 44, 0);
+            Furniture couch = new Furniture("couch", 10, 16);
             Animal cat = new Animal("cat", 10, 16, "Meow!!");
             
             List<Item> roomItems = new List<Item> { chair, table, tv, pc, couch, cat };
