@@ -14,11 +14,11 @@ namespace Task1
         List<Item> itemsInRoom;
         int maxXpos;
         int maxYpos;
-        public Mover(List<Item> roomItems, int roomSizeX, int roomSizeY) 
+        public Mover(TheRoom room) 
         {
-            maxXpos = roomSizeX;
-            maxYpos = roomSizeY;
-            itemsInRoom = roomItems;
+            maxXpos = room.MaxWidth;
+            maxYpos = room.MaxHeight;
+            itemsInRoom = room.RoomItems();
             for (int i = 0; i < itemsInRoom.Count; i++)
             {
                 reservPos.Add(itemsInRoom[i].CurrItemPos);

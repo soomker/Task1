@@ -10,43 +10,31 @@ namespace Task1
     class TheRoom
     {
 
-         int maxX = 100;
-         int maxY = 100;
+         //int maxX = 100;
+        // int maxY = 100;
         List<Item> roomItems;
-        public TheRoom()
+        public TheRoom(int width, int height, List<Item> items)
         {
-            Chair chair = new Chair(20, 30);
-            Table table = new Table(40, 50);
-            Tv tv = new Tv(25, 55);
-            Pc pc = new Pc(44, 0);
-            Couch couch = new Couch(10, 16);
-            Cat cat = new Cat(10, 16);
-            Dog dog = new Dog(12, 13);
-            roomItems = new List<Item> { chair, table, tv, pc, couch, cat , dog};
+            MaxWidth = width;
+            MaxHeight = height;
+            roomItems = items;
         }
 
-        public  int MaxX
+        public int MaxWidth
         {
-            get
-            {
-                return maxX;
-            }
+            get;
+            private set;
         }
 
-        public  int MaxY
+        public  int MaxHeight
         {
-            get
-            {
-                return maxY;
-            }
+            get;
+            private set;
         }
 
-        public List<Item> RoomItems
+        public  List<Item> RoomItems ()
         {
-            get
-            {
-                return roomItems;
-            }
+            return roomItems;
         }
     }
 }
