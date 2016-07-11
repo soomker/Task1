@@ -9,27 +9,45 @@ namespace Task1
 {
     class Mover
     {
-        public Mover() 
+        Random rand = new Random();
+        List<int[]> reservPos = new List<int[]>();
+        List<Item> itemsInRoom;
+        int maxXpos;
+        int maxYpos;
+        public Mover(List<Item> roomItems, int roomSizeX, int roomSizeY) 
         {
-           
-        
-        }
-       
-        
-        public void MoveItems(List<Item> roomItems, ref int[] reservedPos, int maxXpos, int maxYpos)
-        {
-           
-            for (int i = 0; i < roomItems.Count; i++)
+            maxXpos = roomSizeX;
+            maxYpos = roomSizeY;
+            itemsInRoom = roomItems;
+            for (int i = 0; i < itemsInRoom.Count; i++)
             {
-                if (roomItems[i] is Animal)
-                {
-                    Animal anim = roomItems[i] as Animal;
-                    anim.SaySomething();
-                }
-                roomItems[i].Move(reservedPos, maxXpos, maxYpos);
-                reservedPos[i] = roomItems[i].TotalPos;
+                reservPos.Add(itemsInRoom[i].CurrItemPos);
             }
 
         }
+       
+        
+        public void MoveItems()
+        {
+            
+
+            for (int i = 0; i < itemsInRoom.Count; i++)
+            {
+                int[] newPos = new int[2];
+                Console.WriteLine();
+                Console.Write(itemsInRoom[i].ItemName+ "  Current position is: X - {0} and Y - {1} ", reservPos[i][0], reservPos[i][1]);
+                do
+                {
+                    newPos[0] = rand.Next(maxXpos);
+                    newPos[1] = rand.Next(maxYpos);
+
+                }
+                while (reservPos.Contains(newPos));
+                reservPos[i] = newPos;
+                Console.Write(String.Format(itemsInRoom[i].ItemName + " Position after move is: X - {0} and Y - {1}", reservPos[i][0], reservPos[i][1]));
+                Console.WriteLine();
+            }  
+        }
+
     }
 }

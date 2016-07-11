@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Task1.Items
 {
-    class Furniture:Item
+    class Pc: Electronic
     {
-        
-        public Furniture(int posX, int posY)
-            : base(posX, posY) 
+        public Pc(int posX, int posY) : base(posX, posY)
         {
-        
+            ItemName = "PC";
         }
     }
 }

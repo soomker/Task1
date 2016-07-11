@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Task1.Items
 {
-    class Furniture:Item
+    class Electronic:Item
     {
-        
-        public Furniture(int posX, int posY)
-            : base(posX, posY) 
+
+        public Electronic(int posX, int posY) : base(posX, posY)
         {
-        
         }
+
+        public void TurnOn() { }
+        public void TurnOff() { }
     }
 }

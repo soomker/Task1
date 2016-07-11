@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 namespace Task1.Items
 {
     
-        public class Animal : Item
+        public abstract class Animal : Item
         {
             string animalSpeech;
-            public Animal(string name, int posX, int posY, string speech)
-                : base(name, posX, posY)
+            public Animal(int posX, int posY)
+                : base(posX, posY)
             {
-                animalSpeech = speech;
             }
-             
-            public void SaySomething ()
-            {
-                Console.Write(animalSpeech);
-            }
+
+       public  abstract void SaySomething();
+            
         }
     
 }

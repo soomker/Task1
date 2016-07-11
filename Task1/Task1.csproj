@@ -57,11 +57,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Items\Animals.cs" />
+    <Compile Include="Items\Cat.cs" />
+    <Compile Include="Items\Chair.cs" />
+    <Compile Include="Items\Couch.cs" />
+    <Compile Include="Items\Dog.cs" />
+    <Compile Include="Items\Electronic.cs" />
     <Compile Include="Items\Furniture.cs" />
     <Compile Include="Items\Items.cs" />
+    <Compile Include="Items\Pc.cs" />
+    <Compile Include="Items\Table.cs" />
+    <Compile Include="Items\Tv.cs" />
     <Compile Include="Mover.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
