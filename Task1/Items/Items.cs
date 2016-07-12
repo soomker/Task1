@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Task1.Items
 {
@@ -10,17 +11,23 @@ namespace Task1.Items
   {
         #region -------------- CLASS FIELDS -------------------
 
-      public string ItemName { get; set; }
-      int itemPosX;
-      int itemPosY;
-     
-     public int[] CurrItemPos
+     public string ItemName { get; set; }
+     private int itemPosX;
+     private int itemPosY;
+
+        private Point point;
+        public Point Point
         {
-            get
-            {
-                return new int[] { itemPosX, itemPosY };
-            }
+            get { return point; }
+            protected set { }
         }
+     //public int[] CurrItemPos
+     //   {
+     //       get
+     //       {
+     //           return new int[] { itemPosX, itemPosY };
+     //       }
+     //   }
      //public Dictionary<string, int> CurrItemPos
      //   {
      //       get
@@ -38,8 +45,11 @@ namespace Task1.Items
 
         public Item(int posX, int posY)
       {
-          itemPosX = posX;
-          itemPosY = posY;
+            point = new Point();
+            point.X = posX;
+            point.Y = posY;
+            //itemPosX = posX;
+          //itemPosY = posY;
          // totalPos = posX + posY;
       }
 

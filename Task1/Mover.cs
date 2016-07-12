@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Task1.Items;
+using System.Drawing;
 
 namespace Task1
 {
     class Mover
     {
         Random rand = new Random();
-        List<int[]> reservPos = new List<int[]>();
+        //List<int[]> reservPos = new List<int[]>();
+        List<Point> reservPos = new List<Point>();
         List<Item> itemsInRoom;
         int maxXpos;
         int maxYpos;
@@ -21,7 +23,7 @@ namespace Task1
             itemsInRoom = room.RoomItems();
             for (int i = 0; i < itemsInRoom.Count; i++)
             {
-                reservPos.Add(itemsInRoom[i].CurrItemPos);
+                reservPos.Add(itemsInRoom[i].Point);
             }
 
         }
@@ -29,22 +31,22 @@ namespace Task1
         
         public void MoveItems()
         {
-            
 
+            Point newPosPoint = new Point();
             for (int i = 0; i < itemsInRoom.Count; i++)
             {
-                int[] newPos = new int[2];
+               
                 Console.WriteLine();
-                Console.Write(itemsInRoom[i].ItemName+ "  Current position is: X - {0} and Y - {1} ", reservPos[i][0], reservPos[i][1]);
+                Console.Write(itemsInRoom[i].ItemName+ "  Current position is: X - {0} and Y - {1} ", reservPos[i].X, reservPos[i].Y);
                 do
                 {
-                    newPos[0] = rand.Next(maxXpos);
-                    newPos[1] = rand.Next(maxYpos);
+                    newPosPoint.X = rand.Next(maxXpos);
+                    newPosPoint.Y = rand.Next(maxYpos);
 
                 }
-                while (reservPos.Contains(newPos));
-                reservPos[i] = newPos;
-                Console.Write(String.Format(itemsInRoom[i].ItemName + " Position after move is: X - {0} and Y - {1}", reservPos[i][0], reservPos[i][1]));
+                while (reservPos.Contains(newPosPoint));
+                reservPos[i] = newPosPoint;
+                Console.Write(String.Format(itemsInRoom[i].ItemName + " Position after move is: X - {0} and Y - {1}", reservPos[i].X, reservPos[i].Y));
                 Console.WriteLine();
             }  
         }
