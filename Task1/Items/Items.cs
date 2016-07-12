@@ -12,32 +12,13 @@ namespace Task1.Items
         #region -------------- CLASS FIELDS -------------------
 
      public string ItemName { get; set; }
-     private int itemPosX;
-     private int itemPosY;
 
         private Point point;
         public Point Point
         {
-            get { return point; }
+         get { return point; }
             protected set { }
         }
-     //public int[] CurrItemPos
-     //   {
-     //       get
-     //       {
-     //           return new int[] { itemPosX, itemPosY };
-     //       }
-     //   }
-     //public Dictionary<string, int> CurrItemPos
-     //   {
-     //       get
-     //       {
-     //           return new Dictionary<string, int> {{"x",itemPosX },{"y", itemPosY }};
-     //       }
-     //   }
-
-
-        //int totalPos;
 
         #endregion -------------- CLASS FIELDS -------------------
 
@@ -48,12 +29,9 @@ namespace Task1.Items
             point = new Point();
             point.X = posX;
             point.Y = posY;
-            //itemPosX = posX;
-          //itemPosY = posY;
-         // totalPos = posX + posY;
       }
 
-      #endregion -------------- CLASS CONSTRUCTOR -------------------
+        #endregion -------------- CLASS CONSTRUCTOR -------------------
 
   }
 

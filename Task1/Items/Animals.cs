@@ -9,7 +9,7 @@ namespace Task1.Items
     
         public abstract class Animal : Item
         {
-            string animalSpeech;
+            
             public Animal(int posX, int posY)
                 : base(posX, posY)
             {

@@ -21,7 +21,7 @@ namespace Task1
             Dog dog = new Dog(12, 13);
             List<Item>roomItems = new List<Item> { chair, table, tv, pc, couch, cat, dog };
 
-            TheRoom room = new TheRoom(100,100,roomItems);
+            Room room = new Room(100,100,roomItems);
             Mover mover = new Mover(room);
             ConsoleKeyInfo key;
             Console.WriteLine("To move Items press 'ENTER' or double press 'Esc' to exit");

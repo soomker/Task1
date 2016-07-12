@@ -7,13 +7,13 @@ using Task1.Items;
 
 namespace Task1
 {
-    class TheRoom
+    class Room
     {
 
          //int maxX = 100;
         // int maxY = 100;
         List<Item> roomItems;
-        public TheRoom(int width, int height, List<Item> items)
+        public Room(int width, int height, List<Item> items)
         {
             MaxWidth = width;
             MaxHeight = height;

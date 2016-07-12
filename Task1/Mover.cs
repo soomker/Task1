@@ -16,7 +16,7 @@ namespace Task1
         List<Item> itemsInRoom;
         int maxXpos;
         int maxYpos;
-        public Mover(TheRoom room) 
+        public Mover(Room room) 
         {
             maxXpos = room.MaxWidth;
             maxYpos = room.MaxHeight;
